@@ -24,16 +24,19 @@
 
         <TextView
             android:id="@+id/title_tv"
+            style="@style/SportsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
+            android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Basketball" />
 
         <TextView
             android:id="@+id/news_tv"
+            style="@style/SportsDetailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -45,6 +48,7 @@
 
         <TextView
             android:id="@+id/content_tv"
+            style="@style/SportsBody"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
