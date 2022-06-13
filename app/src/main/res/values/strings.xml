@@ -3,4 +3,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="news">News</string>
+    <string name="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id nisi faucibus, blandit quam nec, fermentum elit. Morbi dui odio, vehicula et sapien nec, congue scelerisque tortor. Ut interdum ex ut lectus hendrerit lobortis non nec nulla. Donec non nulla ex. Fusce eleifend accumsan orci, ac porta quam dapibus ut. Maecenas varius ligula sit amet varius sagittis. Donec ullamcorper quam gravida vestibulum euismod. Aenean accumsan sed ante sed maximus. Proin egestas risus quam, congue ullamcorper neque tempor ut. Sed sagittis elementum diam, et maximus diam pharetra lobortis. Nulla non orci quis quam eleifend faucibus. Nullam eget ante ut dolor ultricies egestas nec a metus. Praesent turpis ligula, cursus quis mauris id, cursus posuere ligula.</string>
 </resources>

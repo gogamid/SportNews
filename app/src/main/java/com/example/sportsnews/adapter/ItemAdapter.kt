@@ -6,8 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sportsnews.R
+import com.example.sportsnews.fragments.SportsListFragment
+import com.example.sportsnews.fragments.SportsListFragmentDirections
 import com.example.sportsnews.model.News
 
 class ItemAdapter(
@@ -33,6 +36,14 @@ class ItemAdapter(
     holder.imageView.setImageResource(item.imageId)
     holder.title.text = item.title
     holder.content.text = item.content
+    holder.itemView.setOnClickListener {
+      val action = SportsListFragmentDirections.actionSportsListFragmentToContentFragment(
+        item.imageId,
+        item.title
+      )
+      it.findNavController()
+        .navigate(action)
+    }
   }
 
   override fun getItemCount() = dataset.size
