@@ -1,21 +1,17 @@
 package com.example.sportsnews.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sportsnews.R
-import com.example.sportsnews.fragments.SportsListFragment
-import com.example.sportsnews.fragments.SportsListFragmentDirections
 import com.example.sportsnews.model.News
 
 class ItemAdapter(
-  private val context: Context,
-  private val dataset: List<News>
+  private val dataset: List<News>,
+  private val onItemClicked: (News) -> Unit
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
   class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -37,12 +33,7 @@ class ItemAdapter(
     holder.title.text = item.title
     holder.content.text = item.content
     holder.itemView.setOnClickListener {
-      val action = SportsListFragmentDirections.actionSportsListFragmentToContentFragment(
-        item.imageId,
-        item.title
-      )
-      it.findNavController()
-        .navigate(action)
+      onItemClicked(item)
     }
   }
 

@@ -1,14 +1,16 @@
 package com.example.sportsnews.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.example.sportsnews.databinding.FragmentContentBinding
+import com.example.sportsnews.model.NewsViewModel
 
 class ContentFragment : Fragment() {
+  private val viewModel: NewsViewModel by activityViewModels()
   private lateinit var binding: FragmentContentBinding
 
   override fun onCreateView(
@@ -16,10 +18,10 @@ class ContentFragment : Fragment() {
     savedInstanceState: Bundle?
   ): View {
     binding = FragmentContentBinding.inflate(inflater, container, false)
-    arguments?.let {
-      binding.imageView.setImageResource(it.getInt("imageId"))
-      binding.titleTv.text = it.getString("title").toString()
-    }
+
+    binding.imageView.setImageResource(viewModel.imageId.value!!)
+    binding.titleTv.text = viewModel.title.value
+
     return binding.root
   }
 }
