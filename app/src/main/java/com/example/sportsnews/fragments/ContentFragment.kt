@@ -18,10 +18,18 @@ class ContentFragment : Fragment() {
     savedInstanceState: Bundle?
   ): View {
     binding = FragmentContentBinding.inflate(inflater, container, false)
-
-    binding.imageView.setImageResource(viewModel.imageId.value!!)
-    binding.titleTv.text = viewModel.title.value
-
     return binding.root
+  }
+
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+
+    viewModel.imageId.observe(viewLifecycleOwner) { newImageId ->
+      binding.imageView.setImageResource(newImageId)
+    }
+
+    viewModel.title.observe(viewLifecycleOwner) { newTitle ->
+      binding.titleTv.text = newTitle
+    }
   }
 }

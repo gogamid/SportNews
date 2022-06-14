@@ -34,8 +34,9 @@ class SportsListFragment : Fragment() {
         viewModel.apply {
           setImageId(it.imageId)
           setTitle(it.title)
-          this@SportsListFragment.findNavController()
-            .navigate(R.id.action_sportsListFragment_to_contentFragment)
+//          this@SportsListFragment.findNavController()
+//            .navigate(R.id.action_sportsListFragment_to_contentFragment)
+          binding.slidingPaneLayout.openPane()
         }
       }
       setHasFixedSize(true)
